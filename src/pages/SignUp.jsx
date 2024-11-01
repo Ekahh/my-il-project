@@ -13,6 +13,11 @@ export const SignUp = () => {
     navigate("/create-with-email"); // Arahkan ke halaman EmailCreate
   };
 
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    navigate("/sign-in"); // Arahkan ke halaman SignIn
+  };
+
   return (
     <div className="flex flex-col md:flex-row max-w-[1440px] w-full min-h-screen bg-neutral-50 items-center">
       {/* Image Section */}
@@ -64,7 +69,10 @@ export const SignUp = () => {
         <div className="text-center mt-6">
           <p className="text-base font-semibold text-[#5b5b5b]">
             Anda sudah memiliki akun?{" "}
-            <span className="text-black cursor-pointer hover:text-blue-500">
+            <span
+              className="text-black cursor-pointer hover:text-blue-500"
+              onClick={handleSignIn}
+            >
               Masuk
             </span>
           </p>

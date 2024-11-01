@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 import closeUpGreenLeavesNature from "../assets/close-up-green-leaves-nature.png";
 import removeRedEye from "../assets/remove-red-eye.svg";
 
-export const EmailCreate = () => {
+export const SignIn = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
-  const [passwordError, setPasswordError] = useState(""); // State untuk pesan error password
+  const [passwordError, setPasswordError] = useState("");
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -26,7 +26,7 @@ export const EmailCreate = () => {
     return strongPasswordRegex.test(password);
   };
 
-  const handleSubmit = (e) => {
+  const handleSignIn = (e) => {
     e.preventDefault();
 
     // Reset errors
@@ -56,8 +56,8 @@ export const EmailCreate = () => {
 
     if (!isValid) return; // Hentikan proses jika validasi gagal
 
-    // Langsung navigasi ke halaman EmailCode setelah validasi berhasil
-    navigate("/email-code");
+    // Lanjutkan ke halaman berikut setelah validasi berhasil
+    navigate("/dashboard"); // Sesuaikan rute tujuan setelah login
   };
 
   return (
@@ -72,16 +72,13 @@ export const EmailCreate = () => {
       </div>
 
       {/* Form Section */}
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col items-center w-full md:w-1/2 p-6 md:p-12 lg:p-24 space-y-6"
-      >
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-black">Buat Akun Anda</h1>
-          <p className="mt-4 text-xl font-semibold text-[#000000cc]">
-            Isi detail Anda untuk membuat akun baru!
-          </p>
-        </div>
+      <div className="flex flex-col items-center w-full md:w-1/2 p-6 md:p-12 lg:p-24 space-y-6">
+        <h1 className="text-4xl font-bold text-black text-center">
+          Selamat datang <br /> di TanamanKu
+        </h1>
+        <p className="text-xl font-semibold text-[#000000cc] text-center mt-4">
+          Masuk Akun Anda
+        </p>
 
         {/* Error Message */}
         {error && <p className="text-red-500">{error}</p>}
@@ -119,27 +116,51 @@ export const EmailCreate = () => {
           </p>
         )}
 
-        {/* Submit Button */}
+        {/* Remember Me Checkbox */}
+        <div className="flex items-center w-full max-w-md mt-4">
+          <input
+            type="checkbox"
+            className="w-4 h-4 rounded border-2 border-black mr-2"
+          />
+          <label className="text-sm text-black">
+            Ingat saya selama 30 hari
+          </label>
+        </div>
+
+        {/* Forgot Password Link */}
+        <div className="text-right w-full max-w-md">
+          <a
+            href="#"
+            className="text-sm text-black underline cursor-pointer hover:text-blue-500"
+          >
+            Lupa Kata Sandi?
+          </a>
+        </div>
+
+        {/* Sign In Button */}
         <button
           type="submit"
-          className="w-full max-w-md h-14 bg-tanamanku-2 hover:bg-tanamanku-3 active:bg-tanamanku-4 rounded-lg font-bold text-black"
+          onClick={handleSignIn}
+          className="w-full max-w-md h-14 bg-tanamanku-2 hover:bg-tanamanku-3 active:bg-tanamanku-4 rounded-lg font-bold text-black mt-4"
         >
-          Selanjutnya
+          Masuk
         </button>
 
-        {/* Login Link */}
-        <p className="text-base font-semibold text-[#5b5b5b]">
-          Anda sudah memiliki akun?{" "}
-          <span
-            className="text-black cursor-pointer hover:text-blue-500"
-            onClick={() => navigate("/sign-in")}
-          >
-            Masuk
-          </span>
-        </p>
-      </form>
+        {/* Sign Up Link */}
+        <div className="text-center mt-6">
+          <p className="text-base font-semibold text-[#5b5b5b]">
+            Belum punya akun?{" "}
+            <span
+              className="text-black cursor-pointer hover:text-blue-500"
+              onClick={() => navigate("/")} // Navigasi ke SignUp
+            >
+              Daftar
+            </span>
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default EmailCreate;
+export default SignIn;
