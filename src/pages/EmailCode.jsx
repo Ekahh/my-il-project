@@ -41,7 +41,7 @@ export const EmailCode = () => {
   const handleVerification = () => {
     const verificationCode = code.join("");
     // Panggil API atau navigasi setelah verifikasi
-    navigate("/next-page"); // Sesuaikan rute
+    navigate("/dashboard"); // Sesuaikan rute
   };
 
   const handleResendCode = async () => {
