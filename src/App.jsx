@@ -4,7 +4,8 @@ import SignUp from "./pages/SignUp";
 import EmailCreate from "./pages/EmailCreate";
 import EmailCode from "./pages/EmailCode";
 import SignIn from "./pages/SignIn";
-import Navbar from "./components/Navbar";
+import ForgotPassword from "./pages/ForgotPassword";
+import ForgotPasswordCode from "./pages/ForgotPasswordCode";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <Route path="/create-with-email" element={<EmailCreate />} />
       <Route path="/email-code" element={<EmailCode />} />
       <Route path="/sign-in" element={<SignIn />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/forgot-password-code" element={<ForgotPasswordCode />} />
     </Routes>
   );
 }
