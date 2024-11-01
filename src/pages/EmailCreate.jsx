@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import closeUpGreenLeavesNature from "../assets/close-up-green-leaves-nature.png";
 import removeRedEye from "../assets/remove-red-eye.svg";
 
 export const EmailCreate = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -38,33 +40,8 @@ export const EmailCreate = () => {
       setPasswordError(""); // Bersihkan pesan error jika password valid
     }
 
-    // Data yang dikirim ke Backend
-    const formData = {
-      email: email,
-      password: password,
-    };
-
-    try {
-      const response = await fetch("/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        console.log("Berhasil daftar:", data);
-        // Lakukan tindakan lanjutan, misalnya navigasi ke halaman lain
-      } else {
-        console.error("Gagal daftar");
-        setError("Pendaftaran gagal, periksa data Anda.");
-      }
-    } catch (error) {
-      console.error("Terjadi kesalahan:", error);
-      setError("Terjadi kesalahan jaringan.");
-    }
+    // Langsung navigasi ke halaman EmailCode tanpa menunggu respons server
+    navigate("/email-code");
   };
 
   return (
