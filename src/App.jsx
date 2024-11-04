@@ -6,6 +6,7 @@ import EmailCode from "./pages/EmailCode";
 import SignIn from "./pages/SignIn";
 import ForgotPassword from "./pages/ForgotPassword";
 import ForgotPasswordCode from "./pages/ForgotPasswordCode";
+import NewPassword from "./pages/NewPassword";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/forgot-password-code" element={<ForgotPasswordCode />} />
+      <Route path="/new-password" element={<NewPassword />} />
     </Routes>
   );
 }
