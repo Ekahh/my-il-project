@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import logoTanamanKu from "../assets/logo2.png";
 import homeImage from "../assets/home.jpg";
 import iconDetek from "../assets/ikondetek.png";
 import iconUnduh from "../assets/ikonunduh.svg";
@@ -13,29 +12,8 @@ import imageAnggrek from "../assets/anggrek.jpeg";
 import tentangKamiImage from "../assets/tentangkami.jpg";
 
 function Beranda() {
-  const [showSplash, setShowSplash] = useState(true); // State untuk menampilkan splash screen
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // Tampilkan splash screen selama 2 detik, lalu sembunyikan
-    const timer = setTimeout(() => setShowSplash(false), 2000);
-    return () => clearTimeout(timer); // Bersihkan timer saat unmount
-  }, []);
-
-  if (showSplash) {
-    // Tampilkan splash screen jika `showSplash` true
-    return (
-      <div className="flex items-center justify-center w-screen h-screen bg-tanamanku-2">
-        <img
-          className="w-1/2 max-w-[300px] md:max-w-[400px] lg:max-w-[500px] animate-fade-in"
-          alt="Logo TANAMANKU"
-          src={logoTanamanKu}
-        />
-      </div>
-    );
-  }
-
-  // Setelah splash screen, tampilkan konten `Beranda`
   return (
     <div>
       <Navbar />
@@ -199,12 +177,6 @@ function Beranda() {
               pemula, namun tetap akurat untuk para pecinta tanaman hias yang
               berpengalaman.
             </p>
-            <button
-              onClick={() => navigate("/Tentangkami")}
-              className="mt-6 bg-white text-black px-6 py-2 border-2 border-[#565E6D] float-right"
-            >
-              Tentang Kami
-            </button>
           </div>
         </div>
       </section>
