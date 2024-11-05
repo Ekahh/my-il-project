@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logoTanamanKu from "../assets/logo.png";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import logoTanamanKu from "../assets/logo2.png";
 import homeImage from "../assets/home.jpg";
 import iconDetek from "../assets/ikondetek.png";
 import iconUnduh from "../assets/ikonunduh.svg";
@@ -36,6 +38,7 @@ function Beranda() {
   // Setelah splash screen, tampilkan konten `Beranda`
   return (
     <div>
+      <Navbar />
       {/* Hero Section */}
       <section className="relative">
         <img
@@ -205,6 +208,7 @@ function Beranda() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
