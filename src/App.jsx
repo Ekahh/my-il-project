@@ -13,15 +13,14 @@ import SplashScreen from "./pages/SplashScreen"; // Import SplashScreen
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<SignUp />} />
+      <Route path="/" element={<SplashScreen />} />
       <Route path="/create-with-email" element={<EmailCreate />} />
       <Route path="/email-code" element={<EmailCode />} />
       <Route path="/sign-in" element={<SignIn />} />
+      <Route path="/sign-up" element={<SignUp />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/forgot-password-code" element={<ForgotPasswordCode />} />
       <Route path="/new-password" element={<NewPassword />} />
-      <Route path="/splash" element={<SplashScreen />} />{" "}
-      {/* Tambahkan route ke SplashScreen */}
       <Route path="/beranda" element={<Beranda />} />
     </Routes>
   );
