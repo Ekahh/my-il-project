@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import closeUpGreenLeavesNature from "../assets/close-up-green-leaves-nature.png";
 
-export const EmailCode = () => {
+export const ForgotPasswordCode = () => {
   const navigate = useNavigate();
   const [code, setCode] = useState(["", "", "", "", ""]); // State untuk kode verifikasi
   const inputRefs = useRef([]); // Array refs untuk setiap kotak input
@@ -40,8 +40,8 @@ export const EmailCode = () => {
 
   const handleVerification = () => {
     const verificationCode = code.join("");
-    // Panggil API atau navigasi setelah verifikasi
-    navigate("/beranda"); // Sesuaikan rute
+    // Lanjutkan ke halaman reset password setelah verifikasi
+    navigate("/new-password"); // Sesuaikan rute tujuan
   };
 
   const handleResendCode = async () => {
@@ -80,11 +80,10 @@ export const EmailCode = () => {
       {/* Form Section */}
       <div className="flex flex-col items-center w-full md:w-1/2 p-6 md:p-12 lg:p-24 space-y-6">
         <h1 className="text-4xl font-bold text-black text-center">
-          Verifikasi Kode
+          Verifikasi Kode Pengaturan Ulang Kata Sandi
         </h1>
         <p className="mt-4 text-xl font-semibold text-[#000000cc] text-center">
-          Masukkan kode verifikasi yang baru saja kami kirimkan ke alamat email
-          Anda
+          Masukkan kode verifikasi yang baru saja kami kirimkan ke email Anda
         </p>
         <p className="text-base font-semibold text-[#61c454] text-center">
           Email berhasil dikirim.
@@ -132,4 +131,4 @@ export const EmailCode = () => {
   );
 };
 
-export default EmailCode;
+export default ForgotPasswordCode;

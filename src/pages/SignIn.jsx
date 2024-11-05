@@ -3,6 +3,11 @@ import { useNavigate } from "react-router-dom";
 import closeUpGreenLeavesNature from "../assets/close-up-green-leaves-nature.png";
 import removeRedEye from "../assets/remove-red-eye.svg";
 
+const handleForgotPassword = (e) => {
+  e.preventDefault();
+  navigate("/forgot-password"); // Arahkan ke halaman ForgotPassword
+};
+
 export const SignIn = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -57,7 +62,7 @@ export const SignIn = () => {
     if (!isValid) return; // Hentikan proses jika validasi gagal
 
     // Lanjutkan ke halaman berikut setelah validasi berhasil
-    navigate("/dashboard"); // Sesuaikan rute tujuan setelah login
+    navigate("/beranda"); // Sesuaikan rute tujuan setelah login
   };
 
   return (
@@ -132,6 +137,7 @@ export const SignIn = () => {
           <a
             href="#"
             className="text-sm text-black underline cursor-pointer hover:text-blue-500"
+            onClick={() => navigate("/forgot-password")}
           >
             Lupa Kata Sandi?
           </a>
