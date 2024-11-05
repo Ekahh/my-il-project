@@ -41,7 +41,7 @@ export const ForgotPasswordCode = () => {
   const handleVerification = () => {
     const verificationCode = code.join("");
     // Lanjutkan ke halaman reset password setelah verifikasi
-    navigate("/reset-password"); // Sesuaikan rute tujuan
+    navigate("/new-password"); // Sesuaikan rute tujuan
   };
 
   const handleResendCode = async () => {

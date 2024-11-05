@@ -7,6 +7,7 @@ import SignIn from "./pages/SignIn";
 import ForgotPassword from "./pages/ForgotPassword";
 import ForgotPasswordCode from "./pages/ForgotPasswordCode";
 import NewPassword from "./pages/NewPassword";
+import Beranda from "./pages/Beranda"; // SplashScreen digabung di Beranda
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/forgot-password-code" element={<ForgotPasswordCode />} />
       <Route path="/new-password" element={<NewPassword />} />
+      <Route path="/beranda" element={<Beranda />} />{" "}
     </Routes>
   );
 }
