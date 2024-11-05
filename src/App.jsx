@@ -8,7 +8,9 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ForgotPasswordCode from "./pages/ForgotPasswordCode";
 import NewPassword from "./pages/NewPassword";
 import Beranda from "./pages/Beranda";
-import SplashScreen from "./pages/SplashScreen"; // Import SplashScreen
+import SplashScreen from "./pages/SplashScreen";
+import SplashScreenLogin from "./pages/SplashScreenLogin";
+import BerandaLogin from "./pages/Beranda-Login";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
       <Route path="/forgot-password-code" element={<ForgotPasswordCode />} />
       <Route path="/new-password" element={<NewPassword />} />
       <Route path="/beranda" element={<Beranda />} />
+      <Route path="/splash-login" element={<SplashScreenLogin />} />
+      <Route path="/beranda-login" element={<BerandaLogin />} />
     </Routes>
   );
 }

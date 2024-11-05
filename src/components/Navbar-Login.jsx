@@ -8,7 +8,7 @@ import {
   ChevronDownOutline,
 } from "react-ionicons";
 
-function Navbar() {
+function NavbarLogin() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
@@ -108,19 +108,17 @@ function Navbar() {
             <PersonOutline color="#000000" height="24px" width="24px" />
           </Link>
           <Link to="/settings" className="text-gray-800">
-            {/* Ini gw ilangin dulu gambar settingnnya */}
-            {/* <SettingsOutline color="#000000" height="24px" width="24px" /> */}
+            <SettingsOutline color="#000000" height="24px" width="24px" />
           </Link>
         </div>
 
         {/* Mobile menu icon with settings and user icons */}
         <div className="lg:hidden flex items-center space-x-4">
-          <Link to="/user" className="text-gray-800">
+          <Link to="/sign-up" className="text-gray-800">
             <PersonOutline color="#000000" height="24px" width="24px" />
           </Link>
           <Link to="/settings" className="text-gray-800">
-            {/* Ini gw ilangin dulu gambar settingnnya */}
-            {/* <SettingsOutline color="#000000" height="24px" width="24px" /> */}
+            <SettingsOutline color="#000000" height="24px" width="24px" />
           </Link>
           <button
             className="text-gray-800 focus:outline-none"
@@ -201,4 +199,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavbarLogin;
