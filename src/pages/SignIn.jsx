@@ -62,7 +62,7 @@ export const SignIn = () => {
     if (!isValid) return; // Hentikan proses jika validasi gagal
 
     // Lanjutkan ke halaman berikut setelah validasi berhasil
-    navigate("/"); // Sesuaikan rute tujuan setelah login
+    navigate("/splash-login"); // Sesuaikan rute tujuan setelah login
   };
 
   return (
