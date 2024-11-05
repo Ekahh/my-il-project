@@ -104,7 +104,7 @@ function Navbar() {
 
         {/* Navbar icons for desktop */}
         <div className="hidden lg:flex items-center space-x-10">
-          <Link to="/user" className="text-gray-800">
+          <Link to="/sign-up" className="text-gray-800">
             <PersonOutline color="#000000" height="24px" width="24px" />
           </Link>
           <Link to="/settings" className="text-gray-800">

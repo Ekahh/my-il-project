@@ -1,16 +1,24 @@
+// SplashScreen.jsx
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import logoTanamanKu from "../assets/logo2.png"; // Ganti dengan path logo Anda
+import logoTanamanKu from "../assets/logo2.png";
 
 const SplashScreen = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate("/beranda"); // Arahkan ke Beranda setelah 2 detik
+      const isReturningUser = localStorage.getItem("isReturningUser");
+
+      if (isReturningUser) {
+        navigate("/beranda"); // Jika pengguna sudah sign in sebelumnya, arahkan ke beranda
+      } else {
+        localStorage.setItem("isReturningUser", "true"); // Tandai pengguna sebagai sudah pernah masuk
+        navigate("/beranda"); // Arahkan ke beranda pada awal
+      }
     }, 2000); // Durasi splash screen
 
-    return () => clearTimeout(timer); // Bersihkan timer saat unmount
+    return () => clearTimeout(timer); // Bersihkan timer saat komponen di-unmount
   }, [navigate]);
 
   return (

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import closeUpGreenLeavesNature from "../assets/close-up-green-leaves-nature.png";
 import removeRedEye from "../assets/remove-red-eye.svg";
-import closeIcon from "../assets/close-icon.svg"; // Import SVG close icon
+import closeIcon from "../assets/close-icon.svg";
 
 const NewPassword = () => {
   const navigate = useNavigate();
