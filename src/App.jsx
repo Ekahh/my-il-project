@@ -7,7 +7,8 @@ import SignIn from "./pages/SignIn";
 import ForgotPassword from "./pages/ForgotPassword";
 import ForgotPasswordCode from "./pages/ForgotPasswordCode";
 import NewPassword from "./pages/NewPassword";
-import Beranda from "./pages/Beranda"; // SplashScreen digabung di Beranda
+import Beranda from "./pages/Beranda";
+import SplashScreen from "./pages/SplashScreen"; // Import SplashScreen
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/forgot-password-code" element={<ForgotPasswordCode />} />
       <Route path="/new-password" element={<NewPassword />} />
-      <Route path="/beranda" element={<Beranda />} />{" "}
+      <Route path="/splash" element={<SplashScreen />} />{" "}
+      {/* Tambahkan route ke SplashScreen */}
+      <Route path="/beranda" element={<Beranda />} />
     </Routes>
   );
 }
