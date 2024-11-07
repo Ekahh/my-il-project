@@ -12,6 +12,8 @@ import SplashScreen from "./pages/SplashScreen";
 import SplashScreenLogin from "./pages/SplashScreenLogin";
 import BerandaLogin from "./pages/BerandaLogin";
 import SignInAdmin from "./pages/SignInAdmin";
+import Admin from "./pages/Admin";
+import AdminPanduan from "./pages/AdminPanduan";
 
 function App() {
   return (
@@ -28,6 +30,10 @@ function App() {
       <Route path="/beranda" element={<Beranda />} />
       <Route path="/splash-login" element={<SplashScreenLogin />} />
       <Route path="/beranda-login" element={<BerandaLogin />} />
+
+      {/* Route Admin */}
+      <Route path="/admin" element={<Admin />} />
+      <Route path="/admin/card-panduan" element={<AdminPanduan />} />
     </Routes>
   );
 }
