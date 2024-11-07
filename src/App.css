@@ -39,3 +39,17 @@ body,
 .animate-fade-in {
   animation: fade-in 1.5s ease-in-out;
 }
+
+/* Tambahkan pengaturan untuk memastikan tampilan tetap penuh */
+.full-width {
+  width: 100%;
+  max-width: 1440px; /* Sesuaikan dengan resolusi yang diinginkan */
+  margin: auto;
+}
+
+.full-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

@@ -1,17 +1,20 @@
 import React from "react";
 
-const Button = ({ text, icon, bgColor, textColor, borderColor, onClick }) => (
-  <button
-    onClick={onClick} // Menambahkan event handler onClick
-    className={`all-[unset] box-border w-[404px] h-11 flex items-center justify-center gap-2 border ${bgColor} ${borderColor}`}
-  >
-    <img className="w-5 h-5" alt={text} src={icon} />
-    <div
-      className={`text-base ${textColor} font-normal [font-family:'Poppins-Regular',Helvetica]`}
+const Button = ({ label, icon, className }) => {
+  return (
+    <button
+      className={`all-[unset] box-border h-11 w-[404px] ${className} relative`}
     >
-      {text}
-    </div>
-  </button>
-);
+      <div className="left-[120px] text-neutral-700 absolute top-2 font-normal text-base">
+        {label}
+      </div>
+      <img
+        className="absolute w-5 h-5 top-3 left-[95px]"
+        alt={label}
+        src={icon}
+      />
+    </button>
+  );
+};
 
 export default Button;
