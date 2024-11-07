@@ -57,7 +57,7 @@ export const SignInAdmin = () => {
     if (!isValid) return; // Hentikan proses jika validasi gagal
 
     // Lanjutkan ke halaman splash login setelah validasi berhasil
-    navigate("/splash-login"); // Sesuaikan rute tujuan setelah login
+    navigate("/admin"); // Sesuaikan rute tujuan setelah login
   };
 
   return (

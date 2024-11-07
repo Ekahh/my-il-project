@@ -23,7 +23,19 @@ export default function NavbarAdmin({ children }) {
         } transition-transform`}
       >
         <div className="flex items-center justify-center mb-8">
-          <img src={Logo} alt="Logo" className="h-10" />
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `block px-4 py-2 rounded ${
+                isActive
+                  ? "bg-[#C5D9A4] text-gray-900 font-semibold"
+                  : "text-gray-800 hover:bg-[#C5D9A4]"
+              }`
+            }
+            onClick={() => setIsOpen(false)}
+          >
+            <img src={Logo} alt="Logo" className="h-10" />
+          </NavLink>
         </div>
         <ul className="flex flex-col space-y-5">
           <li>

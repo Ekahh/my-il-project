@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import FooterAdmin from "../components/FooterAdmin";
 import Breadcrumbs from "../components/BreadCrumbs";
 import NavbarAdmin from "../components/NavAdmin";
@@ -7,7 +7,6 @@ import NavbarAdmin from "../components/NavAdmin";
 function AdminPanduan() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
-  const navigate = useNavigate();
 
   const data = [
     {
@@ -58,10 +57,10 @@ function AdminPanduan() {
   };
 
   return (
-    <div className="full-width min-h-screen flex flex-col bg-gray-100">
+    <div className="full-screen full-width bg-gray-100">
       <NavbarAdmin>
-        <div className="flex-1 p-6">
           <Breadcrumbs />
+        <div className="flex-1 p-6 scrollable">
           <div className="flex justify-between items-center mb-4">
             <h1 className="text-2xl font-semibold text-gray-800">
               Daftar Panduan
