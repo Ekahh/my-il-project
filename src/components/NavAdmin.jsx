@@ -24,7 +24,7 @@ export default function NavbarAdmin({ children }) {
       >
         <div className="flex items-center justify-center mb-8">
           <NavLink
-            to="/"
+            to="/beranda-login"
             className={({ isActive }) =>
               `block px-4 py-2 rounded ${
                 isActive
