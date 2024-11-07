@@ -5,13 +5,13 @@ import Breadcrumbs from "../components/BreadCrumbs";
 import NavbarAdmin from "../components/NavAdmin";
 import ContohGambar from "../assets/contoh-gambar.png";
 
-function AdminPanduan() {
-  const navigate = useNavigate(); // Inisialisasi navigate
+function IsiArtikel() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const navigate = useNavigate(); // Tambahkan ini
 
-  const handleEditPanduan = () => {
-    navigate("/admin/card-panduan/edit-panduan"); // Arahkan ke halaman edit panduan
+  const handleEditIsiArtikel = () => {
+    navigate("/admin/isi-artikel/edit-isi-artikel"); // Arahkan ke halaman edit isi artikel
   };
 
   const data = [
@@ -19,13 +19,13 @@ function AdminPanduan() {
       id: 1,
       title: "Hama Pada Bunga Mawar",
       image: ContohGambar,
-      status: "Publik",
+      status: "Diterbitkan",
     },
     {
       id: 2,
       title: "Hama Pada Bunga Anggrek",
       image: ContohGambar,
-      status: "Publik",
+      status: "Diterbitkan",
     },
     {
       id: 3,
@@ -69,14 +69,8 @@ function AdminPanduan() {
         <div className="flex-1 p-6 scrollable">
           <div className="flex justify-between items-center mb-4">
             <h1 className="text-2xl font-semibold text-gray-800">
-              Daftar Panduan
+              Daftar Artikel
             </h1>
-            <Link
-              to="/admin/card-panduan/tambah-panduan"
-              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
-            >
-              Tambah Panduan
-            </Link>
           </div>
 
           <div className="bg-white shadow-md rounded-lg overflow-hidden">
@@ -87,7 +81,7 @@ function AdminPanduan() {
                     #
                   </th>
                   <th className="px-4 py-2 text-left text-gray-800 font-semibold">
-                    Judul Panduan
+                    Judul Artikel
                   </th>
                   <th className="px-4 py-2 text-left text-gray-800 font-semibold">
                     Gambar Utama
@@ -126,7 +120,7 @@ function AdminPanduan() {
                     <td className="px-4 py-2 text-center">
                       <span
                         className={`px-3 py-1 rounded-full text-white font-semibold ${
-                          item.status === "Publik"
+                          item.status === "Diterbitkan"
                             ? "bg-green-500"
                             : "bg-yellow-500"
                         }`}
@@ -136,7 +130,7 @@ function AdminPanduan() {
                     </td>
                     <td className="px-4 py-2 text-center">
                       <button
-                        onClick={handleEditPanduan}
+                        onClick={handleEditIsiArtikel}
                         className="bg-yellow-500 text-white px-2 py-1 rounded mr-2 hover:bg-yellow-600"
                       >
                         ✏️
@@ -165,7 +159,7 @@ function AdminPanduan() {
                   ✖️
                 </button>
                 <h2 className="text-lg font-semibold mb-4">
-                  Apakah Anda yakin ingin menghapus panduan ini?
+                  Apakah Anda yakin ingin menghapus isi artikel ini?
                 </h2>
                 <div className="flex justify-center items-center space-x-4 mt-4">
                   <button
@@ -191,4 +185,4 @@ function AdminPanduan() {
   );
 }
 
-export default AdminPanduan;
+export default IsiArtikel;

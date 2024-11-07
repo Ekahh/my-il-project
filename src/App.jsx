@@ -19,6 +19,14 @@ import PersonalSetting from "./pages/PersonalSetting";
 import PasswordSetting from "./pages/PasswordSetting";
 import TambahArtikel from "./pages/TambahArtikel";
 import TambahPanduan from "./pages/TambahPanduan";
+import IsiArtikel from "./pages/IsiArtikel";
+import IsiPanduan from "./pages/IsiPanduan";
+import EditArtikel from "./pages/EditArtikel";
+import EditIsiArtikel from "./pages/EditIsiArtikel";
+import AppearanceSettings from "./pages/AppearanceSettings";
+import OtherSettings from "./pages/OtherSettings";
+import EditPanduan from "./pages/EditPanduan";
+import EditIsiPanduan from "./pages/EditIsiPanduan";
 
 function App() {
   return (
@@ -37,18 +45,42 @@ function App() {
       <Route path="/beranda-login" element={<BerandaLogin />} />
       <Route path="/personal-setting" element={<PersonalSetting />} />
       <Route path="/password-setting" element={<PasswordSetting />} />
+      <Route path="/appearance-setting" element={<AppearanceSettings />} />
+      <Route path="/other-setting" element={<OtherSettings />} />
 
       {/* Route Admin */}
       <Route path="/admin" element={<Admin />} />
+
+      {/* Route Artikel */}
       <Route path="/admin/card-artikel" element={<AdminArtikel />} />
       <Route
         path="/admin/card-artikel/tambah-artikel"
         element={<TambahArtikel />}
       />
+      <Route path="/admin/isi-artikel" element={<IsiArtikel />} />
+      <Route
+        path="/admin/card-artikel/edit-artikel"
+        element={<EditArtikel />}
+      />
+      <Route
+        path="/admin/isi-artikel/edit-isi-artikel"
+        element={<EditIsiArtikel />}
+      />
+
+      {/* Route Panduan */}
       <Route path="/admin/card-panduan" element={<AdminPanduan />} />
       <Route
         path="/admin/card-panduan/tambah-panduan"
         element={<TambahPanduan />}
+      />
+      <Route path="/admin/isi-panduan" element={<IsiPanduan />} />
+      <Route
+        path="/admin/card-panduan/edit-panduan"
+        element={<EditPanduan />}
+      />
+      <Route
+        path="/admin/isi-panduan/edit-isi-panduan"
+        element={<EditIsiPanduan />}
       />
     </Routes>
   );

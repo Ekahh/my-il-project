@@ -1,42 +1,48 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FooterAdmin from "../components/FooterAdmin";
 import Breadcrumbs from "../components/BreadCrumbs";
 import NavbarAdmin from "../components/NavAdmin";
+import ContohGambar from "../assets/contoh-gambar.png";
 
 function AdminArtikel() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const navigate = useNavigate(); // Tambahkan ini
+
+  const handleEditArtikel = () => {
+    navigate("/admin/card-artikel/edit-artikel"); // Arahkan ke halaman edit artikel
+  };
 
   const data = [
     {
       id: 1,
       title: "Hama Pada Bunga Mawar",
-      image: "/path/to/image1.jpg",
+      image: ContohGambar,
       status: "Publik",
     },
     {
       id: 2,
       title: "Hama Pada Bunga Anggrek",
-      image: "/path/to/image2.jpg",
+      image: ContohGambar,
       status: "Publik",
     },
     {
       id: 3,
       title: "Hama Pada Bunga Tulip",
-      image: "/path/to/image3.jpg",
+      image: ContohGambar,
       status: "Draft",
     },
     {
       id: 4,
       title: "Hama Pada Bunga Kamboja",
-      image: "/path/to/image4.jpg",
+      image: ContohGambar,
       status: "Draft",
     },
     {
       id: 5,
       title: "Hama Pada Bunga Janda Bolong",
-      image: "/path/to/image5.jpg",
+      image: ContohGambar,
       status: "Draft",
     },
   ];
@@ -100,7 +106,16 @@ function AdminArtikel() {
                     <td className="px-4 py-2 text-center font-medium text-gray-700">
                       {index + 1}
                     </td>
-                    <td className="px-4 py-2 text-gray-700">{item.title}</td>
+                    <td
+                      className="px-4 py-2 text-gray-700"
+                      style={{
+                        maxWidth: "200px",
+                        whiteSpace: "normal",
+                        wordWrap: "break-word",
+                      }}
+                    >
+                      {item.title}
+                    </td>
                     <td className="px-4 py-2">
                       <img
                         src={item.image}
@@ -120,7 +135,10 @@ function AdminArtikel() {
                       </span>
                     </td>
                     <td className="px-4 py-2 text-center">
-                      <button className="bg-yellow-500 text-white px-2 py-1 rounded mr-2 hover:bg-yellow-600">
+                      <button
+                        onClick={handleEditArtikel}
+                        className="bg-yellow-500 text-white px-2 py-1 rounded mr-2 hover:bg-yellow-600"
+                      >
                         ✏️
                       </button>
                       <button
