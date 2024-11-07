@@ -59,14 +59,14 @@ function AdminPanduan() {
   return (
     <div className="full-screen full-width bg-gray-100">
       <NavbarAdmin>
-          <Breadcrumbs />
+        <Breadcrumbs />
         <div className="flex-1 p-6 scrollable">
           <div className="flex justify-between items-center mb-4">
             <h1 className="text-2xl font-semibold text-gray-800">
               Daftar Panduan
             </h1>
             <Link
-              to="/admin/card-panduan/add-panduan"
+              to="/admin/card-panduan/tambah-panduan"
               className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
             >
               Tambah Panduan

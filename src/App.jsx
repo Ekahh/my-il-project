@@ -17,6 +17,8 @@ import AdminPanduan from "./pages/AdminPanduan";
 import AdminArtikel from "./pages/AdminArtikel";
 import PersonalSetting from "./pages/PersonalSetting";
 import PasswordSetting from "./pages/PasswordSetting";
+import TambahArtikel from "./pages/TambahArtikel";
+import TambahPanduan from "./pages/TambahPanduan";
 
 function App() {
   return (
@@ -38,8 +40,16 @@ function App() {
 
       {/* Route Admin */}
       <Route path="/admin" element={<Admin />} />
-      <Route path="/admin/card-panduan" element={<AdminPanduan />} />
       <Route path="/admin/card-artikel" element={<AdminArtikel />} />
+      <Route
+        path="/admin/card-artikel/tambah-artikel"
+        element={<TambahArtikel />}
+      />
+      <Route path="/admin/card-panduan" element={<AdminPanduan />} />
+      <Route
+        path="/admin/card-panduan/tambah-panduan"
+        element={<TambahPanduan />}
+      />
     </Routes>
   );
 }
