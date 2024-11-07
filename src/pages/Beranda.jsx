@@ -181,7 +181,7 @@ function Beranda() {
           </div>
         </div>
       </section>
-      <FooterAdmin />
+      <Footer />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import FooterAdmin from "../components/FooterAdmin";
 import Breadcrumbs from "../components/BreadCrumbs";
 import NavbarAdmin from "../components/NavAdmin";
 
-function AdminPanduan() {
+function AdminArtikel() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
 
@@ -63,13 +63,13 @@ function AdminPanduan() {
         <div className="flex-1 p-6 scrollable">
           <div className="flex justify-between items-center mb-4">
             <h1 className="text-2xl font-semibold text-gray-800">
-              Daftar Panduan
+              Daftar Artikel
             </h1>
             <Link
-              to="/admin/card-panduan/tambah-panduan"
+              to="/admin/card-artikel/tambah-artikel"
               className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
             >
-              Tambah Panduan
+              Tambah Artikel
             </Link>
           </div>
 
@@ -81,7 +81,7 @@ function AdminPanduan() {
                     #
                   </th>
                   <th className="px-4 py-2 text-left text-gray-800 font-semibold">
-                    Judul Panduan
+                    Judul Artikel
                   </th>
                   <th className="px-4 py-2 text-left text-gray-800 font-semibold">
                     Gambar Utama
@@ -147,7 +147,7 @@ function AdminPanduan() {
                   ✖️
                 </button>
                 <h2 className="text-lg font-semibold mb-4">
-                  Apakah Anda yakin ingin menghapus panduan ini?
+                  Apakah Anda yakin ingin menghapus artikel ini?
                 </h2>
                 <div className="flex justify-center items-center space-x-4 mt-4">
                   <button
@@ -173,4 +173,4 @@ function AdminPanduan() {
   );
 }
 
-export default AdminPanduan;
+export default AdminArtikel;

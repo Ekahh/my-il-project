@@ -107,7 +107,7 @@ function NavbarLogin() {
           <Link to="/sign-up" className="text-gray-800">
             <PersonOutline color="#000000" height="24px" width="24px" />
           </Link>
-          <Link to="/settings" className="text-gray-800">
+          <Link to="/personal-setting" className="text-gray-800">
             <SettingsOutline color="#000000" height="24px" width="24px" />
           </Link>
         </div>

@@ -71,7 +71,7 @@ export default function NavbarAdmin({ children }) {
               <ul className="pl-8">
                 <li>
                   <NavLink
-                    to="/admin/articles"
+                    to="/admin/card-artikel"
                     className={({ isActive }) =>
                       `block px-4 py-2 rounded ${
                         isActive
@@ -81,7 +81,22 @@ export default function NavbarAdmin({ children }) {
                     }
                     onClick={() => setIsOpen(false)}
                   >
-                    Semua Artikel
+                    Card Artikel
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/admin/isi-artikel"
+                    className={({ isActive }) =>
+                      `block px-4 py-2 rounded ${
+                        isActive
+                          ? "bg-[#C5D9A4] text-gray-900 font-semibold"
+                          : "text-gray-800 hover:bg-[#C5D9A4]"
+                      }`
+                    }
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Isi Artikel
                   </NavLink>
                 </li>
               </ul>
@@ -111,6 +126,21 @@ export default function NavbarAdmin({ children }) {
                     onClick={() => setIsOpen(false)}
                   >
                     Card Panduan
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/admin/isi-panduan"
+                    className={({ isActive }) =>
+                      `block px-4 py-2 rounded ${
+                        isActive
+                          ? "bg-[#C5D9A4] text-gray-900 font-semibold"
+                          : "text-gray-800 hover:bg-[#C5D9A4]"
+                      }`
+                    }
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Isi Panduan
                   </NavLink>
                 </li>
               </ul>
