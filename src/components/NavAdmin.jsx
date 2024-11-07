@@ -71,6 +71,21 @@ export default function NavbarAdmin({ children }) {
               <ul className="pl-8">
                 <li>
                   <NavLink
+                    to="/admin/card-artikel"
+                    className={({ isActive }) =>
+                      `block px-4 py-2 rounded ${
+                        isActive
+                          ? "bg-[#C5D9A4] text-gray-900 font-semibold"
+                          : "text-gray-800 hover:bg-[#C5D9A4]"
+                      }`
+                    }
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Card Artikel
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
                     to="/admin/articles"
                     className={({ isActive }) =>
                       `block px-4 py-2 rounded ${
@@ -81,7 +96,7 @@ export default function NavbarAdmin({ children }) {
                     }
                     onClick={() => setIsOpen(false)}
                   >
-                    Semua Artikel
+                    Isi Artikel
                   </NavLink>
                 </li>
               </ul>
