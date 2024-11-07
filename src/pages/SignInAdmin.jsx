@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import closeUpGreenLeavesNature from "../assets/close-up-green-leaves-nature.png";
 import removeRedEye from "../assets/remove-red-eye.svg";
 
-export const SignIn = () => {
+export const SignInAdmin = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -56,7 +56,7 @@ export const SignIn = () => {
 
     if (!isValid) return; // Hentikan proses jika validasi gagal
 
-    // Lanjutkan ke halaman berikut setelah validasi berhasil
+    // Lanjutkan ke halaman splash login setelah validasi berhasil
     navigate("/splash-login"); // Sesuaikan rute tujuan setelah login
   };
 
@@ -77,7 +77,7 @@ export const SignIn = () => {
           Selamat datang <br /> di TanamanKu
         </h1>
         <p className="text-xl font-semibold text-[#000000cc] text-center mt-4">
-          Masuk Akun Anda
+          Masuk Akun Admin Anda
         </p>
 
         {/* Error Message */}
@@ -145,22 +145,9 @@ export const SignIn = () => {
         >
           Masuk
         </button>
-
-        {/* Sign Up Link */}
-        <div className="text-center mt-6">
-          <p className="text-base font-semibold text-[#5b5b5b]">
-            Belum punya akun?{" "}
-            <span
-              className="text-black cursor-pointer hover:text-blue-500"
-              onClick={() => navigate("/sign-up")}
-            >
-              Daftar
-            </span>
-          </p>
-        </div>
       </div>
     </div>
   );
 };
 
-export default SignIn;
+export default SignInAdmin;

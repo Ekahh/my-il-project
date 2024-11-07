@@ -10,6 +10,7 @@ import imageMawar from "../assets/mawar.jpeg";
 import imageMelati from "../assets/melati.jpeg";
 import imageAnggrek from "../assets/anggrek.jpeg";
 import tentangKamiImage from "../assets/tentangkami.jpg";
+import FooterAdmin from "../components/FooterAdmin";
 
 function Beranda() {
   const navigate = useNavigate();
@@ -180,7 +181,7 @@ function Beranda() {
           </div>
         </div>
       </section>
-      <Footer />
+      <FooterAdmin />
     </div>
   );
 }
