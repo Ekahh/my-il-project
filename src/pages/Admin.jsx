@@ -9,8 +9,8 @@ export default function Admin() {
       <NavbarAdmin>
         <Breadcrumbs />
         <Outlet />
+        <FooterAdmin />
       </NavbarAdmin>
-      <FooterAdmin />
     </div>
   );
 }
