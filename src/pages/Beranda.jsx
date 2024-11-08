@@ -130,15 +130,15 @@ function Beranda() {
               <div
                 key={index}
                 onClick={() => navigate("/artikelsaatdibuka")}
-                className="cursor-pointer bg-white rounded-lg shadow-md overflow-hidden"
+                className="cursor-pointer rounded-lg shadow-md overflow-hidden bg-cover bg-center"
+                style={{ backgroundImage: `url(${article.src})` }}
               >
-                <img
-                  src={article.src}
-                  alt={article.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <p className="text-sm text-gray-600">{article.date}</p>
+                {/* Empty Space */}
+                <div className="h-48"></div>
+
+                {/* Text Overlay Container with Backdrop Opacity */}
+                <div className="bg-[#C4C8AD] bg-opacity-70 p-6 rounded-lg">
+                  <p className="text-sm">{article.date}</p>
                   <h3 className="text-lg font-semibold">{article.title}</h3>
                   <p className="text-gray-900 mt-2 text-left">
                     Artikel ini membahas berbagai jenis hama yang sering
