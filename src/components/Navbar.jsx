@@ -119,7 +119,7 @@ function Navbar() {
                   <ul className="py-2" onClick={closeDropdown}>
                     <li>
                       <Link
-                        to="/deteksi-penyakit"
+                        to="/sign-up"
                         className="block px-4 py-2 text-gray-800 hover:bg-[#E7F0DC] rounded"
                       >
                         Deteksi Penyakit
@@ -127,7 +127,7 @@ function Navbar() {
                     </li>
                     <li>
                       <Link
-                        to="/histori-tanaman"
+                        to="/sign-up"
                         className="block px-4 py-2 text-gray-800 hover:bg-[#E7F0DC] rounded"
                       >
                         Histori Tanaman
@@ -139,7 +139,7 @@ function Navbar() {
             </div>
 
             <Link
-              to="/tentangkami"
+              to="/tentang-kami"
               className="block px-4 py-2 text-gray-800 hover:bg-[#C5D9A4] rounded"
             >
               Tentang Kami

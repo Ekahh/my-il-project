@@ -6,7 +6,14 @@ const PasswordSetting = () => {
     <div className="flex flex-col lg:flex-row h-screen w-screen overflow-hidden">
       {/* Sidebar */}
       <aside className="w-full lg:w-1/4 bg-green-100 p-4 sm:p-6">
-        <h2 className="text-lg font-bold">Pengaturan</h2>
+        <Link to="/beranda-login" className="flex items-center space-x-2">
+          <img
+            src="./src/assets/settings-icon.svg" // Add the icon path here
+            alt="Pengaturan Icon"
+            className="w-5 h-5"
+          />
+          <h2 className="text-lg font-bold">Pengaturan</h2>
+        </Link>
         <ul className="mt-4 space-y-4">
           <li>
             <Link
@@ -48,16 +55,6 @@ const PasswordSetting = () => {
             </Link>
           </li>
           <li>
-            <div className="flex items-center space-x-2 p-2 rounded-md hover:bg-green-200 transition duration-300 ease-in-out cursor-pointer">
-              <img
-                src="./src/assets/download-icon.svg"
-                alt="Pengelola Unduhan Icon"
-                className="w-5 h-5"
-              />
-              <span>Pengelola Unduhan</span>
-            </div>
-          </li>
-          <li>
             <Link
               to="/other-setting"
               className="flex items-center space-x-2 p-2 rounded-md hover:bg-green-200 transition duration-300 ease-in-out cursor-pointer"
@@ -82,7 +79,7 @@ const PasswordSetting = () => {
             <input
               type="password"
               className="w-full p-2 border rounded-md mt-1"
-              placeholder="************"
+              placeholder=""
             />
           </div>
           <div>
@@ -90,7 +87,7 @@ const PasswordSetting = () => {
             <input
               type="password"
               className="w-full p-2 border rounded-md mt-1"
-              placeholder="************"
+              placeholder=""
             />
           </div>
           <div>
@@ -98,7 +95,7 @@ const PasswordSetting = () => {
             <input
               type="password"
               className="w-full p-2 border rounded-md mt-1"
-              placeholder="************"
+              placeholder=""
             />
           </div>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-6">

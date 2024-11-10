@@ -63,6 +63,7 @@ function App() {
       <Route path="/other-setting" element={<OtherSettings />} />
       <Route path="/panduan" element={<Panduan />} />
       <Route path="/tips" element={<Tips />} />
+      <Route path="/tips-perawatan-tanaman" element={<ArticlesPage />} />
 
       {/* Route Admin */}
       <Route path="/admin" element={<Admin />} />
