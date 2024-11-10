@@ -19,63 +19,75 @@ export const SignUp = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row max-w-[1440px] w-full min-h-screen bg-neutral-50 items-center">
-      {/* Image Section */}
-      <div className="hidden md:block md:w-1/2 p-10">
-        <img
-          className="w-full object-cover max-h-[900px] rounded-lg"
-          alt="Close up green"
-          src={closeUpGreenLeavesNature}
-        />
-      </div>
+    <div className="relative min-h-screen w-full flex items-center justify-center bg-neutral-50">
+      {/* Background Image Fullscreen */}
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
+        style={{
+          backgroundImage: `url(${closeUpGreenLeavesNature})`,
+          filter: "brightness(0.85)", // Optional: darken background
+        }}
+      ></div>
 
-      {/* Form Section */}
-      <div className="flex flex-col items-center w-full md:w-1/2 p-6 md:p-12 lg:p-24 space-y-6">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-black">
-            Selamat datang di TanamanKu
-          </h1>
-          <p className="mt-4 text-xl font-semibold text-[#000000cc]">
-            Buat akun baru dan mulailah menjelajahi semua fitur kami!
-          </p>
+      {/* Content Section */}
+      <div className="relative flex flex-col md:flex-row max-w-[1440px] w-full min-h-screen bg-neutral-50 items-center z-10">
+        {/* Image Section */}
+        <div className="hidden md:block md:w-1/2 p-10">
+          <img
+            className="w-full object-cover max-h-[900px] rounded-lg"
+            alt="Close up green"
+            src={closeUpGreenLeavesNature}
+          />
         </div>
 
-        {/* Button to navigate to EmailCreate */}
-        <button
-          type="button"
-          onClick={handleEmailSignUp}
-          className="w-full max-w-md h-14 bg-tanamanku-2 hover:bg-tanamanku-3 active:bg-tanamanku-4 rounded-lg font-bold text-black"
-        >
-          Daftar dengan Email
-        </button>
+        {/* Form Section */}
+        <div className="flex flex-col items-center w-full md:w-1/2 p-6 md:p-12 lg:p-24 space-y-6">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-black">
+              Selamat datang di TanamanKu
+            </h1>
+            <p className="mt-4 text-xl font-semibold text-[#000000cc]">
+              Buat akun baru dan mulailah menjelajahi semua fitur kami!
+            </p>
+          </div>
 
-        {/* Button Google (non-functional) */}
-        <button className="flex items-center justify-center gap-2 w-full max-w-md bg-white hover:bg-[#f0f0f0] active:bg-[#e0e0e0] py-2.5 border border-[#565e6d] rounded-lg">
-          <img className="w-5 h-5" alt="Google" src={google} />
-          <span className="text-[#565e6d] font-normal text-base">
-            Daftar dengan Google
-          </span>
-        </button>
+          {/* Button to navigate to EmailCreate */}
+          <button
+            type="button"
+            onClick={handleEmailSignUp}
+            className="w-full max-w-md h-14 bg-tanamanku-2 hover:bg-tanamanku-3 active:bg-tanamanku-4 rounded-lg font-bold text-black"
+          >
+            Daftar dengan Email
+          </button>
 
-        {/* Button Facebook (non-functional) */}
-        <button className="flex items-center justify-center gap-2 w-full max-w-md bg-white hover:bg-[#f0f0f0] active:bg-[#e0e0e0] py-2.5 border border-[#565e6d] rounded-lg">
-          <img className="w-5 h-5" alt="Logo fb simple" src={logoFbSimple} />
-          <span className="text-[#565e6d] font-normal text-base">
-            Daftar dengan Facebook
-          </span>
-        </button>
-
-        {/* Login Link */}
-        <div className="text-center mt-6">
-          <p className="text-base font-semibold text-[#5b5b5b]">
-            Anda sudah memiliki akun?{" "}
-            <span
-              className="text-black cursor-pointer hover:text-blue-500"
-              onClick={handleSignIn}
-            >
-              Masuk
+          {/* Button Google (non-functional) */}
+          <button className="flex items-center justify-center gap-2 w-full max-w-md bg-white hover:bg-[#f0f0f0] active:bg-[#e0e0e0] py-2.5 border border-[#565e6d] rounded-lg">
+            <img className="w-5 h-5" alt="Google" src={google} />
+            <span className="text-[#565e6d] font-normal text-base">
+              Daftar dengan Google
             </span>
-          </p>
+          </button>
+
+          {/* Button Facebook (non-functional) */}
+          <button className="flex items-center justify-center gap-2 w-full max-w-md bg-white hover:bg-[#f0f0f0] active:bg-[#e0e0e0] py-2.5 border border-[#565e6d] rounded-lg">
+            <img className="w-5 h-5" alt="Logo fb simple" src={logoFbSimple} />
+            <span className="text-[#565e6d] font-normal text-base">
+              Daftar dengan Facebook
+            </span>
+          </button>
+
+          {/* Login Link */}
+          <div className="text-center mt-6">
+            <p className="text-base font-semibold text-[#5b5b5b]">
+              Anda sudah memiliki akun?{" "}
+              <span
+                className="text-black cursor-pointer hover:text-blue-500"
+                onClick={handleSignIn}
+              >
+                Masuk
+              </span>
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -11,16 +11,26 @@ import {
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isPerawatanDropdownOpen, setIsPerawatanDropdownOpen] = useState(false);
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    setIsMobileDropdownOpen(false); // Close mobile dropdown when toggling menu
+    setIsMobileDropdownOpen(false);
+    setIsDropdownOpen(false);
+    setIsPerawatanDropdownOpen(false);
   };
 
   const toggleDropdown = (e) => {
     e.preventDefault();
     setIsDropdownOpen(!isDropdownOpen);
+    setIsPerawatanDropdownOpen(false); // Tutup dropdown Perawatan
+  };
+
+  const togglePerawatanDropdown = (e) => {
+    e.preventDefault();
+    setIsPerawatanDropdownOpen(!isPerawatanDropdownOpen);
+    setIsDropdownOpen(false); // Tutup dropdown Blog/Artikel
   };
 
   const toggleMobileDropdown = (e) => {
@@ -31,6 +41,7 @@ function Navbar() {
   const closeDropdown = (e) => {
     e.stopPropagation();
     setIsDropdownOpen(false);
+    setIsPerawatanDropdownOpen(false);
     setIsMobileDropdownOpen(false);
   };
 
@@ -51,6 +62,7 @@ function Navbar() {
             >
               Beranda
             </Link>
+            {/* Dropdown untuk Blog/Artikel */}
             <div className="relative">
               <button
                 className="flex items-center px-4 py-2 text-gray-800 hover:bg-[#C5D9A4] rounded cursor-pointer focus:outline-none"
@@ -87,12 +99,45 @@ function Navbar() {
                 </div>
               )}
             </div>
-            <Link
-              to="/perawatan"
-              className="block px-4 py-2 text-gray-800 hover:bg-[#C5D9A4] rounded"
-            >
-              Perawatan
-            </Link>
+
+            {/* Dropdown untuk Perawatan */}
+            <div className="relative">
+              <button
+                className="flex items-center px-4 py-2 text-gray-800 hover:bg-[#C5D9A4] rounded cursor-pointer focus:outline-none"
+                onClick={togglePerawatanDropdown}
+              >
+                Perawatan
+                <ChevronDownOutline
+                  color={"#000000"}
+                  height="24px"
+                  width="24px"
+                  className="ml-2"
+                />
+              </button>
+              {isPerawatanDropdownOpen && (
+                <div className="absolute left-0 mt-2 w-60 bg-white shadow-lg rounded-md border z-10">
+                  <ul className="py-2" onClick={closeDropdown}>
+                    <li>
+                      <Link
+                        to="/deteksi-penyakit"
+                        className="block px-4 py-2 text-gray-800 hover:bg-[#E7F0DC] rounded"
+                      >
+                        Deteksi Penyakit
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/histori-tanaman"
+                        className="block px-4 py-2 text-gray-800 hover:bg-[#E7F0DC] rounded"
+                      >
+                        Histori Tanaman
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+
             <Link
               to="/tentangkami"
               className="block px-4 py-2 text-gray-800 hover:bg-[#C5D9A4] rounded"
@@ -145,7 +190,7 @@ function Navbar() {
             </li>
             <li>
               <button
-                onClick={toggleMobileDropdown}
+                onClick={toggleDropdown}
                 className="flex justify-between w-full px-4 py-2 text-gray-800 hover:bg-[#C5D9A4] rounded focus:outline-none"
               >
                 Blog/Artikel
@@ -155,7 +200,7 @@ function Navbar() {
                   width="24px"
                 />
               </button>
-              {isMobileDropdownOpen && (
+              {isDropdownOpen && (
                 <ul className="mt-2 space-y-2 ml-4">
                   <li>
                     <Link
@@ -179,12 +224,39 @@ function Navbar() {
               )}
             </li>
             <li>
-              <Link
-                to="/perawatan"
-                className="block px-4 py-2 text-gray-800 hover:bg-[#C5D9A4] rounded"
+              <button
+                onClick={togglePerawatanDropdown}
+                className="flex justify-between w-full px-4 py-2 text-gray-800 hover:bg-[#C5D9A4] rounded focus:outline-none"
               >
                 Perawatan
-              </Link>
+                <ChevronDownOutline
+                  color={"#000000"}
+                  height="24px"
+                  width="24px"
+                />
+              </button>
+              {isPerawatanDropdownOpen && (
+                <ul className="mt-2 space-y-2 ml-4">
+                  <li>
+                    <Link
+                      to="/deteksi-penyakit"
+                      className="block px-4 py-2 text-gray-800 hover:bg-[#C5D9A4] rounded"
+                      onClick={closeDropdown}
+                    >
+                      Deteksi Penyakit
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/histori-tanaman"
+                      className="block px-4 py-2 text-gray-800 hover:bg-[#C5D9A4] rounded"
+                      onClick={closeDropdown}
+                    >
+                      Histori Tanaman
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
             <li>
               <Link
