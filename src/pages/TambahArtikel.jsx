@@ -11,6 +11,7 @@ function TambahArtikel() {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [description, setDescription] = useState("");
+  const [content, setContent] = useState("");
   const [image, setImage] = useState(null);
   const [imageName, setImageName] = useState("");
 
@@ -90,20 +91,37 @@ function TambahArtikel() {
               />
             </div>
 
-            {/* Input Deskripsi */}
+            {/* Input Deskripsi Singkat */}
             <div className="mb-4">
               <label
                 htmlFor="description"
                 className="block font-semibold mb-2 text-gray-700"
               >
-                Deskripsi
+                Deskripsi Singkat
               </label>
               <textarea
                 id="description"
                 className="w-full p-2 border border-green-500 rounded-md"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                placeholder="Deskripsi Artikel"
+                placeholder="Deskripsi Singkat Artikel"
+              />
+            </div>
+
+            {/* Input Isi Artikel */}
+            <div className="mb-4">
+              <label
+                htmlFor="content"
+                className="block font-semibold mb-2 text-gray-700"
+              >
+                Isi Artikel
+              </label>
+              <textarea
+                id="content"
+                className="w-full p-2 border border-green-500 rounded-md"
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+                placeholder="Isi Artikel"
               />
             </div>
 
@@ -173,7 +191,7 @@ function TambahArtikel() {
           </div>
         </div>
       </NavbarAdmin>
-        <FooterAdmin />
+      <FooterAdmin />
     </div>
   );
 }

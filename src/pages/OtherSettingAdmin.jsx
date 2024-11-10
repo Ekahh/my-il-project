@@ -1,10 +1,10 @@
-// OtherSettingAdmin.jsx
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate
-import lockIcon from '../assets/lock-icon.svg'; // Example icon
-import userIcon from '../assets/user-icon.svg'; // Example icon for Pribadi
-import otherIcon from '../assets/menu-icon.svg'; // Example icon for Lainnya
-import deleteIcon from '../assets/delete-icon.svg';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom"; // Import Link and useNavigate
+import lockIcon from "../assets/lock-icon.svg";
+import userIcon from "../assets/user-icon.svg";
+import otherIcon from "../assets/menu-icon.svg";
+import deleteIcon from "../assets/delete-icon.svg";
+import editIcon from "../assets/edit-icon.svg";
 
 const OtherSettingAdmin = () => {
   const [showDeletePopup, setShowDeletePopup] = useState(false);
@@ -17,7 +17,6 @@ const OtherSettingAdmin = () => {
   };
 
   const confirmDelete = () => {
-    // Handle delete logic here (e.g., API call to delete user)
     console.log(`User ${selectedUser} has been deleted.`);
     setShowDeletePopup(false);
     setSelectedUser(null);
@@ -33,21 +32,37 @@ const OtherSettingAdmin = () => {
       {/* Sidebar */}
       <div className="w-full md:w-1/4 bg-gray-100 p-5">
         <div className="flex flex-col space-y-4">
-          {/* Pribadi */}
-          <Link to="/admin/personal-setting" className="hover:bg-gray-200 transition-all duration-300 p-3 rounded cursor-pointer flex items-center">
-            <img src={userIcon} alt="user" className="inline-block w-5 h-5 mr-2" />
+          <Link
+            to="/admin/personal-setting"
+            className="hover:bg-gray-200 transition-all duration-300 p-3 rounded cursor-pointer flex items-center"
+          >
+            <img
+              src={userIcon}
+              alt="user"
+              className="inline-block w-5 h-5 mr-2"
+            />
             Pribadi
           </Link>
-
-          {/* Kata Sandi */}
-          <Link to="/admin/password-setting" className="hover:bg-gray-200 transition-all duration-300 p-3 rounded cursor-pointer flex items-center">
-            <img src={lockIcon} alt="lock" className="inline-block w-5 h-5 mr-2" />
+          <Link
+            to="/admin/password-setting"
+            className="hover:bg-gray-200 transition-all duration-300 p-3 rounded cursor-pointer flex items-center"
+          >
+            <img
+              src={lockIcon}
+              alt="lock"
+              className="inline-block w-5 h-5 mr-2"
+            />
             Kata Sandi
           </Link>
-
-          {/* Lainnya */}
-          <Link to="/admin/other-setting" className="hover:bg-gray-200 transition-all duration-300 p-3 rounded-md bg-white cursor-pointer flex items-center">
-            <img src={otherIcon} alt="others" className="inline-block w-5 h-5 mr-2" />
+          <Link
+            to="/admin/other-setting"
+            className="hover:bg-gray-200 transition-all duration-300 p-3 rounded-md bg-white cursor-pointer flex items-center"
+          >
+            <img
+              src={otherIcon}
+              alt="others"
+              className="inline-block w-5 h-5 mr-2"
+            />
             Lainnya
           </Link>
         </div>
@@ -57,18 +72,18 @@ const OtherSettingAdmin = () => {
       <div className="flex-1 p-8">
         <h2 className="text-2xl font-bold mb-6">Lainnya</h2>
 
-        {/* Add User and Cancel Buttons */}
+        {/* Buttons Section */}
         <div className="flex space-x-4 mb-4">
-          {/* Batal Button */}
           <button
-            onClick={() => navigate('/admin/')} // Go back to the previous page
+            onClick={() => navigate("/admin/")}
             className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg"
           >
             Kembali
           </button>
-
-          {/* Tambah User Button */}
-          <Link to="/admin/form-other-setting" className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition-all duration-300">
+          <Link
+            to="/admin/form-other-setting"
+            className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition-all duration-300"
+          >
             + Tambah User
           </Link>
         </div>
@@ -90,8 +105,19 @@ const OtherSettingAdmin = () => {
               <td className="p-3 border-b">Admin2</td>
               <td className="p-3 border-b">Admin2@gmail.com</td>
               <td className="p-3 border-b">Sarah Isnaini Alnauri</td>
-              <td className="p-3 border-b">
-                <button onClick={() => handleDeleteClick('Admin2')} className="hover:bg-gray-200 p-2 rounded transition-all duration-300">
+              <td className="p-3 border-b flex space-x-2">
+                {/* Edit Button */}
+                <button
+                  onClick={() => navigate(`/admin/edit-other-setting/Admin2`)}
+                  className="hover:bg-gray-200 p-2 rounded transition-all duration-300"
+                >
+                  <img src={editIcon} alt="edit" className="w-5 h-5" />
+                </button>
+                {/* Delete Button */}
+                <button
+                  onClick={() => handleDeleteClick("Admin2")}
+                  className="hover:bg-gray-200 p-2 rounded transition-all duration-300"
+                >
                   <img src={deleteIcon} alt="delete" className="w-5 h-5" />
                 </button>
               </td>
@@ -103,13 +129,21 @@ const OtherSettingAdmin = () => {
         {showDeletePopup && (
           <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center">
             <div className="bg-white p-6 rounded shadow-lg max-w-sm w-full text-center">
-              <h3 className="text-lg font-semibold mb-4">Apakah Anda yakin ingin menghapus akun ini?</h3>
+              <h3 className="text-lg font-semibold mb-4">
+                Apakah Anda yakin ingin menghapus akun ini?
+              </h3>
               <div className="flex flex-col space-y-4">
-                <button onClick={confirmDelete} className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-all duration-300">
+                <button
+                  onClick={confirmDelete}
+                  className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-all duration-300"
+                >
                   Hapus
                 </button>
                 <span className="text-gray-500">atau</span>
-                <button onClick={cancelDelete} className="border border-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-100 transition-all duration-300">
+                <button
+                  onClick={cancelDelete}
+                  className="border border-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-100 transition-all duration-300"
+                >
                   Batal
                 </button>
               </div>
