@@ -32,13 +32,18 @@ import PasswordSettingAdmin from "./pages/PasswordSettingAdmin";
 import OtherSettingAdmin from "./pages/OtherSettingAdmin";
 import FormOtherSettingAdmin from "./pages/FormOtherSettingAdmin";
 import ArticlesPage from "./pages/ArticlesPage";
+import ArticlesPageLogin from "./pages/ArticlesPageLogin";
 import Article from "./pages/Article";
+import ArticleLogin from "./pages/ArticleLogin";
 import Tentangkami from "./pages/Tentangkami";
+import TentangkamiLogin from "./pages/TentangkamiLogin";
 import DeteksiPenyakit from "./pages/DeteksiPenyakit";
 import IdentifikasiAi from "./pages/IdentifikasiAi";
 import HistoryDeteksi from "./pages/HistoryDeteksi";
 import Panduan from "./pages/Panduan";
+import PanduanLogin from "./pages/PanduanLogin";
 import Tips from "./pages/Tips";
+import TipsLogin from "./pages/TipsLogin";
 
 function App() {
   return (
@@ -54,7 +59,12 @@ function App() {
       <Route path="/new-password" element={<NewPassword />} />
       <Route path="/beranda" element={<Beranda />} />
       <Route path="/artikel-penyakit-tanaman" element={<ArticlesPage />} />
+      <Route
+        path="/artikel-penyakit-tanaman-login"
+        element={<ArticlesPageLogin />}
+      />
       <Route path="/article/:id" element={<Article />} />
+      <Route path="/article-login/:id" element={<ArticleLogin />} />
       <Route path="/splash-login" element={<SplashScreenLogin />} />
       <Route path="/beranda-login" element={<BerandaLogin />} />
       <Route path="/personal-setting" element={<PersonalSetting />} />
@@ -62,7 +72,9 @@ function App() {
       <Route path="/appearance-setting" element={<AppearanceSettings />} />
       <Route path="/other-setting" element={<OtherSettings />} />
       <Route path="/panduan" element={<Panduan />} />
+      <Route path="/panduan-login" element={<PanduanLogin />} />
       <Route path="/tips" element={<Tips />} />
+      <Route path="/tips-login" element={<TipsLogin />} />
       <Route path="/tips-perawatan-tanaman" element={<ArticlesPage />} />
 
       {/* Route Admin */}
@@ -115,6 +127,7 @@ function App() {
 
       {/* Route Tentang Kami */}
       <Route path="/tentang-kami" element={<Tentangkami />} />
+      <Route path="/tentang-kami-login" element={<TentangkamiLogin />} />
 
       {/* Route Perawatamn */}
       <Route path="/deteksi-penyakit" element={<DeteksiPenyakit />} />

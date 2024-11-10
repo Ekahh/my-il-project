@@ -81,7 +81,7 @@ function Navbar() {
                   <ul className="py-2" onClick={closeDropdown}>
                     <li>
                       <Link
-                        to="/tips-perawatan-tanaman"
+                        to="/panduan"
                         className="block px-4 py-2 text-gray-800 hover:bg-[#E7F0DC] rounded"
                       >
                         Tips Perawatan Tanaman

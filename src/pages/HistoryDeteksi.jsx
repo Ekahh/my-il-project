@@ -4,7 +4,7 @@ import '../index.css';
 import { ArrowBackOutline } from 'react-ionicons';
 import tomat from '../assets/tomat.jpg';
 import selada from '../assets/selada.jpg';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/NavbarLogin';
 import Footer from '../components/Footer';
 
 const HistoryDeteksi = () => {

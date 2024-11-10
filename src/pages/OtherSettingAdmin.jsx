@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Import Link and useNavigate
 import kembaliIcon from "../assets/settings-icon.svg"; // Add the kembali icon
 import lockIcon from "../assets/lock-icon.svg";
 import userIcon from "../assets/user-icon.svg";
 import otherIcon from "../assets/menu-icon.svg";
 import deleteIcon from "../assets/delete-icon.svg";
+import editIcon from "../assets/edit-icon.svg";
 
 const OtherSettingAdmin = () => {
   const [showDeletePopup, setShowDeletePopup] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Hook to handle navigation
 
   const handleDeleteClick = (user) => {
     setSelectedUser(user);
@@ -29,6 +30,7 @@ const OtherSettingAdmin = () => {
 
   return (
     <div className="flex flex-col md:flex-row w-full min-h-screen">
+      {/* Sidebar */}
       <div className="w-full md:w-1/4 bg-gray-100 p-5">
         <div className="flex flex-col space-y-4">
           <Link to="/admin" className="flex items-center space-x-2">
@@ -80,7 +82,7 @@ const OtherSettingAdmin = () => {
       <div className="flex-1 p-8">
         <h2 className="text-2xl font-bold mb-6">Lainnya</h2>
 
-        {/* Add User and Cancel Buttons */}
+        {/* Buttons Section */}
         <div className="flex space-x-4 mb-4">
           {/* Batal Button */}
           <button
@@ -116,7 +118,15 @@ const OtherSettingAdmin = () => {
               <td className="p-3 border-b">Admin2</td>
               <td className="p-3 border-b">Admin2@gmail.com</td>
               <td className="p-3 border-b">Sarah Isnaini Alnauri</td>
-              <td className="p-3 border-b">
+              <td className="p-3 border-b flex space-x-2">
+                {/* Edit Button */}
+                <button
+                  onClick={() => navigate(`/admin/edit-other-setting/Admin2`)}
+                  className="hover:bg-gray-200 p-2 rounded transition-all duration-300"
+                >
+                  <img src={editIcon} alt="edit" className="w-5 h-5" />
+                </button>
+                {/* Delete Button */}
                 <button
                   onClick={() => handleDeleteClick("Admin2")}
                   className="hover:bg-gray-200 p-2 rounded transition-all duration-300"

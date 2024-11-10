@@ -1,7 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import lockIcon from "../assets/lock-icon.svg";
+import userIcon from "../assets/user-icon.svg"; // Example icon for Pribadi
+import otherIcon from "../assets/menu-icon.svg"; // Example icon for Lainnya
+import kembaliIcon from "../assets/settings-icon.svg"; // Add the kembali icon
 
 const OtherSettings = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col lg:flex-row h-screen w-screen overflow-hidden">
       {/* Sidebar */}
@@ -98,10 +104,18 @@ const OtherSettings = () => {
         </button>
 
         <div className="flex justify-end space-x-4">
-          <button className="border border-gray-300 text-gray-700 rounded-md px-4 py-2">
+          <button
+            type="button"
+            onClick={() => navigate("/beranda-login")}
+            className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg"
+          >
             Batal
           </button>
-          <button className="bg-green-500 text-white rounded-md px-4 py-2">
+          <button
+            type="button"
+            onClick={() => navigate("/beranda-login")}
+            className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg"
+          >
             Simpan Perubahan
           </button>
         </div>

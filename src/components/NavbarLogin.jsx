@@ -33,7 +33,7 @@ function NavbarLogin() {
         <div className="flex-grow flex items-center justify-center space-x-6">
           <div className="hidden lg:flex space-x-6">
             <Link
-              to="/beranda"
+              to="/beranda-login"
               className="block px-4 py-2 text-gray-800 hover:bg-[#C5D9A4] rounded"
             >
               Beranda
@@ -58,7 +58,7 @@ function NavbarLogin() {
                   <ul className="py-2">
                     <li>
                       <Link
-                        to="/tips-perawatan-tanaman"
+                        to="/panduan-login"
                         className="block px-4 py-2 text-gray-800 hover:bg-[#E7F0DC] rounded"
                         onClick={() => setIsDropdownOpen(null)}
                       >
@@ -67,7 +67,7 @@ function NavbarLogin() {
                     </li>
                     <li>
                       <Link
-                        to="/artikel-penyakit-tanaman"
+                        to="/artikel-penyakit-tanaman-login"
                         className="block px-4 py-2 text-gray-800 hover:bg-[#E7F0DC] rounded"
                         onClick={() => setIsDropdownOpen(null)}
                       >
@@ -120,7 +120,7 @@ function NavbarLogin() {
             </div>
 
             <Link
-              to="/tentangkami"
+              to="/tentang-kami-login"
               className="block px-4 py-2 text-gray-800 hover:bg-[#C5D9A4] rounded"
             >
               Tentang Kami
@@ -131,7 +131,7 @@ function NavbarLogin() {
         {/* Navbar icons for desktop */}
         <div className="hidden lg:flex items-center space-x-10">
           <Link to="/sign-up" className="text-gray-800">
-            <PersonOutline color="#000000" height="24px" width="24px" />
+            {/* <PersonOutline color="#000000" height="24px" width="24px" /> */}
           </Link>
           <Link to="/personal-setting" className="text-gray-800">
             <SettingsOutline color="#000000" height="24px" width="24px" />
