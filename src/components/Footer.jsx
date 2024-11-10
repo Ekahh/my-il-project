@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/Logo.png"; // Make sure this path is correct
+import logo from "../assets/Logo.png";
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: "#F5F5F5" }} className="text-black py-6">
+    <footer className="w-full bg-[#F5F5F5] text-black py-6">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
-        {/* Logo and Copyright */}
+        {/* Logo dan Hak Cipta */}
         <div className="flex items-center mb-4 md:mb-0">
           <img src={logo} alt="Logo" className="h-10 w-auto mr-3" />
           <span className="text-xl font-semibold"></span>
@@ -41,7 +41,7 @@ const Footer = () => {
           </li>
         </ul>
 
-        {/* Responsive Copyright Text */}
+        {/* Hak Cipta Responsif */}
         <p className="text-sm text-center md:hidden">
           ©2024. All rights reserved.
         </p>
