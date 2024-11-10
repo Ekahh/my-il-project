@@ -10,6 +10,7 @@ function EditIsiPanduan() {
   // State untuk menyimpan data form
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [content, setContent] = useState("");
   const [tips, setTips] = useState("");
   const [image, setImage] = useState(null);
   const [imageName, setImageName] = useState("");
@@ -78,20 +79,37 @@ function EditIsiPanduan() {
               Konten Panduan
             </h3>
 
-            {/* Input Deskripsi Panduan */}
+            {/* Input Deskripsi Singkat Panduan */}
             <div className="mb-4">
               <label
                 htmlFor="description"
                 className="block font-semibold mb-2 text-gray-700"
               >
-                Deskripsi Panduan
+                Deskripsi Singkat Panduan
               </label>
               <textarea
                 id="description"
                 className="w-full p-2 border border-green-500 rounded-md"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                placeholder="Deskripsi Panduan"
+                placeholder="Deskripsi Singkat Panduan"
+              />
+            </div>
+
+            {/* Input Isi Panduan */}
+            <div className="mb-4">
+              <label
+                htmlFor="content"
+                className="block font-semibold mb-2 text-gray-700"
+              >
+                Isi Panduan
+              </label>
+              <textarea
+                id="content"
+                className="w-full p-2 border border-green-500 rounded-md"
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+                placeholder="Isi Panduan"
               />
             </div>
 

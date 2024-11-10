@@ -11,6 +11,7 @@ function TambahPanduan() {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [description, setDescription] = useState("");
+  const [content, setContent] = useState("");
   const [image, setImage] = useState(null);
   const [imageName, setImageName] = useState("");
 
@@ -90,20 +91,54 @@ function TambahPanduan() {
               />
             </div> */}
 
-            {/* Input Deskripsi */}
+            {/* Input Deskripsi Singkat */}
             <div className="mb-4">
               <label
                 htmlFor="description"
                 className="block font-semibold mb-2 text-gray-700"
               >
-                Deskripsi
+                Deskripsi Singkat
               </label>
               <textarea
                 id="description"
                 className="w-full p-2 border border-green-500 rounded-md"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                placeholder="Deskripsi Panduan"
+                placeholder="Deskripsi Singkat Panduan"
+              />
+            </div>
+
+            {/* Input Isi */}
+            <div className="mb-4">
+              <label
+                htmlFor="content"
+                className="block font-semibold mb-2 text-gray-700"
+              >
+                Isi
+              </label>
+              <textarea
+                id="content"
+                className="w-full p-2 border border-green-500 rounded-md"
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+                placeholder="Isi Panduan"
+              />
+            </div>
+
+            {/* Input Tips & Trick */}
+            <div className="mb-4">
+              <label
+                htmlFor="description"
+                className="block font-semibold mb-2 text-gray-700"
+              >
+                Tips & Trick
+              </label>
+              <textarea
+                id="description"
+                className="w-full p-2 border border-green-500 rounded-md"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder="Tips & Trick Panduan"
               />
             </div>
 
@@ -173,7 +208,7 @@ function TambahPanduan() {
           </div>
         </div>
       </NavbarAdmin>
-        <FooterAdmin />
+      <FooterAdmin />
     </div>
   );
 }

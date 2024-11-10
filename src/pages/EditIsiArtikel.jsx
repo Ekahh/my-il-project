@@ -12,6 +12,7 @@ function EditIsiArtikel() {
   const [subtitle, setSubtitle] = useState("");
   const [publisher, setPublisher] = useState("");
   const [publishDate, setPublishDate] = useState("");
+  const [description, setDescription] = useState("");
   const [content, setContent] = useState("");
   const [image, setImage] = useState(null);
   const [imageName, setImageName] = useState("");
@@ -136,7 +137,24 @@ function EditIsiArtikel() {
                 />
               </div>
 
-              {/* Input Isi Artikel */}
+              {/* Edit Deskripsi Singkat Artikel */}
+              <div className="mb-4">
+                <label
+                  htmlFor="description"
+                  className="block font-semibold mb-2 text-gray-700"
+                >
+                  Deskripsi Singkat
+                </label>
+                <textarea
+                  id="description"
+                  className="w-full p-2 border border-green-500 rounded-md"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  placeholder="Edit Deskripsi Singkat Artikel"
+                />
+              </div>
+
+              {/* Edit Isi Artikel */}
               <div className="mb-4">
                 <label
                   htmlFor="content"
@@ -149,7 +167,7 @@ function EditIsiArtikel() {
                   className="w-full p-2 border border-green-500 rounded-md"
                   value={content}
                   onChange={(e) => setContent(e.target.value)}
-                  placeholder="Isi Artikel"
+                  placeholder="Edit Isi Artikel"
                 />
               </div>
             </div>
